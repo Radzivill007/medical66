@@ -1,0 +1,97 @@
+// Styling for the navbar
+.navbar-root {
+  background-color: $gray-900;
+  .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white !important;
+    border: 0;
+    background-color: $primary;
+    @include heading-font;
+  }
+  .navbar-brand {
+    color: $primary !important;
+    @include script-font;
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken($primary, 10%) !important;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .navbar-root {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+    .navbar-brand {
+      font-size: 1.75em;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    &.navbar-shrink {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: $gray-900;
+      .navbar-brand {
+        font-size: 1.25em;
+        padding: 12px 0;
+      }
+    }
+  }
+}
+
+.logo_text {
+    margin-left: 10px;
+    color: #239dd8;
+}
+
+.whatsapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    bottom: 50px; 
+    right: 100px; 
+    width: 70px;
+    height: 70px; 
+    z-index: 1000;
+    background: rgb(2, 211, 94); 
+    border-radius: 50%;
+
+    @media (max-width: 767px) {
+        bottom: 30px; 
+        right: 20px; 
+        width: 40px;
+        height: 40px; 
+    }
+    
+    & .icon {
+        width: 50px !important;
+        height: 50px;
+        color:white;
+        @media (max-width: 767px) { 
+            width: 30px;
+            height: 30px; 
+        }
+    }
+}
+.bounce-2 {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: bounce-2;
+    animation-timing-function: ease;
+}
+@keyframes bounce-2 {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-15px); box-shadow: 0px 0px 10px black; }
+    100% { transform: translateY(0); }
+}
