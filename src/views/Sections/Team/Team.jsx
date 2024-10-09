@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Row, Button } from "react-bootstrap";
-import TeamMember from "components/TeamMember";
+// import TeamMember from "components/TeamMember";
 import SectionHeader from "components/SectionHeader";
 import PageSection from "components/PageSection";
 import "./Team.scss";
@@ -12,6 +12,18 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const Team = ({ className, frontmatter }) => {
+  const [images, setImages] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    fetch("https://62a1cd4dcc8c0118ef554cea.mockapi.io/Medical66")
+      .then((res) => res.json())
+      .then((res) => {
+        setImages(res);
+        setIsLoading(false);
+      });
+  }, []);
+
   if (!frontmatter) {
     return null;
   }
@@ -24,6 +36,9 @@ const Team = ({ className, frontmatter }) => {
     autoplay: false,
     slidesToShow: 1,
     slidesToScroll: 1,
+    speed: 400,
+    touchThreshold: 50,
+    swipeToSlide: true,
     centerPadding: "50px",
     responsive: [
       {
@@ -44,7 +59,7 @@ const Team = ({ className, frontmatter }) => {
       </Row>
       <Row className="justify-content-end">
         <Button
-          href="https://www.avito.ru/user/8968d2a181c9a641fcc425527de9b84f/profile?id=2059266830&src=item"
+          href="https://www.avito.ru/user/855ca93ee2b7685901feb70c428dc7f8/profile?id=2155756001&src=item&page_from=from_item_card&iid=2155756001"
           target="_blank"
           variant="outline"
           className="mr-3"
@@ -53,10 +68,21 @@ const Team = ({ className, frontmatter }) => {
         </Button>
       </Row>
       <Slider {...settings}>
+        {isLoading ? (
+          <div className="team-mock-block">Загрузка...</div>
+        ) : (
+          images.map((image, index) => (
+            <div key={image.item} className="team-image">
+              <img src={`${image.item}`} alt={`feedback-${index}`} />
+            </div>
+          ))
+        )}
+      </Slider>
+      {/* <Slider {...settings}>
         {teamMember.map(({ imageFileName, imageAlt }) => (
           <TeamMember key={imageFileName} imageFileName={imageFileName} imageAlt={imageAlt} />
         ))}
-      </Slider>
+      </Slider> */}
     </PageSection>
   );
 };

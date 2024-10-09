@@ -16,3 +16,22 @@
     margin-top: 0;
   }
 }
+
+.team-image {
+  outline: 0 !important;
+  border: 0 !important;
+}
+
+.team-image > img {
+  max-height: 600px;
+  width: unset !important;
+  margin: auto;
+}
+
+.team-mock-block {
+  height: 600px;
+  background-color: #f8f9fa;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
