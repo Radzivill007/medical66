@@ -16,11 +16,11 @@ p {
 }
 
 .primary-dark {
-    color: darken($primary, 15%) !important;
+  color: darken($primary, 15%) !important;
 }
 
 section {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 h1,
@@ -65,6 +65,13 @@ img::-moz-selection {
   font-weight: 700;
 }
 
+.img-dialog {
+  max-height: 40vh;
+  & img {
+    object-fit: contain !important;
+  }
+}
+
 .btn-xl {
   font-size: 18px;
   padding: 20px 40px;
@@ -87,7 +94,38 @@ img::-moz-selection {
   }
 }
 
-
 .navbar-brand {
-    color: lighten($primary, 90%) !important;
+  color: lighten($primary, 90%) !important;
+}
+
+.svg-inline--fa,
+svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+.fa-inverse {
+  color: #fff;
+}
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+.fa-4x {
+  font-size: 4em;
+}
+
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+
+.slick-dots > li {
+  margin: 0px;
 }
