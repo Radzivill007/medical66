@@ -24,7 +24,7 @@ products: [
   }, 
   {
     imageFileName: "product/ортез.jpg",
-    imageFileNameDetail: ["product/ортез-full.jpg", "product/ортез-full2.jpg", "product/ортез-full3.PNG"],
+    imageFileNameDetail: ["product/ортез-full.jpg"],
     header: "Ортезы",
     subheader: "Фиксация сустава, разгрузка мышц и суставов",
     extraInfo: ["Коленный ортез новый - 5.000 руб"],
