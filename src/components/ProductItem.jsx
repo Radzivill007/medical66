@@ -30,23 +30,25 @@ const ProductItem = ({
 
   return (
     <>
-      <Col sm={6} lg={4} className="product-item">
-        <Image
-          className="product-img"
-          fileName={imageFileName}
-          alt={imageAlt || header || subheader}
-        />
-        <div className="product-caption">
-          <h4>{header}</h4>
-          {subheaderOutside ? (
-            <p className="text-muted mb-2">{subheaderOutside}</p>
-          ) : (
-            <p className="text-muted mb-2">{subheader}</p>
-          )}
-          <div>{extraInfo}</div>
-          <Button variant="primary" data-toggle="modal" onClick={handleShowDetail}>
-            {more}
-          </Button>
+      <Col md={6} lg={4} className="product-item p-2">
+        <div className="product-wrap">
+          <Image
+            className="product-img"
+            fileName={imageFileName}
+            alt={imageAlt || header || subheader}
+          />
+          <div className="product-caption">
+            <h4 className="mb-2">{header}</h4>
+            {subheaderOutside ? (
+              <p className="text-muted mb-2">{subheaderOutside}</p>
+            ) : (
+              <p className="text-muted mb-2">{subheader}</p>
+            )}
+            <div>{extraInfo}</div>
+            <Button className="btn" size="lg" variant="primary" data-toggle="modal" onClick={handleShowDetail}>
+              {more}
+            </Button>
+          </div>
         </div>
       </Col>
       <ProductDetailDialog
