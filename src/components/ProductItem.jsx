@@ -21,9 +21,11 @@ const ProductItem = ({
   extraInfo,
 }) => {
   const [showDetail, setShowDetail] = React.useState(false);
+
   const handleShowDetail = React.useCallback(() => {
     setShowDetail(true);
   }, []);
+
   const handleHideDetail = React.useCallback(() => {
     setShowDetail(false);
   }, []);
@@ -37,20 +39,31 @@ const ProductItem = ({
             fileName={imageFileName}
             alt={imageAlt || header || subheader}
           />
+
           <div className="product-caption">
             <h4 className="mb-2">{header}</h4>
+
             {subheaderOutside ? (
               <p className="text-muted mb-2">{subheaderOutside}</p>
             ) : (
               <p className="text-muted mb-2">{subheader}</p>
             )}
+
             <div>{extraInfo}</div>
-            <Button className="btn" size="lg" variant="primary" data-toggle="modal" onClick={handleShowDetail}>
+
+            <Button
+              className="btn"
+              size="lg"
+              variant="primary"
+              data-toggle="modal"
+              onClick={handleShowDetail}
+            >
               {more}
             </Button>
           </div>
         </div>
       </Col>
+
       <ProductDetailDialog
         show={showDetail}
         onHide={handleHideDetail}

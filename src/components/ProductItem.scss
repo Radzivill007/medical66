@@ -20,18 +20,13 @@
     .product-img {
       align-self: center;
       max-width: 100%;
-      height: auto;
-      width: 60%;
-      margin: 20px 0;
-      @media (max-width: 576px) {
-        max-width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-      }
+      height: 300px;
+      width: 100%;
     }
 
     img {
-      background-color: white !important;
+      background-color: #ececec !important;
+      object-fit: contain !important;
     }
 
     .product-link {
