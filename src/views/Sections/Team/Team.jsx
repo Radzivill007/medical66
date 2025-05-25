@@ -59,7 +59,7 @@ const Team = ({ className, frontmatter }) => {
       </Row>
       <Row className="justify-content-end">
         <Button
-          href="https://www.avito.ru/user/855ca93ee2b7685901feb70c428dc7f8/profile?id=2155756001&src=item&page_from=from_item_card&iid=2155756001"
+          href="https://www.avito.ru/brands/i4845421/all?sellerId=dfa3b8c3c1edae813c6a516aff36b715"
           target="_blank"
           variant="outline"
           className="mr-3"
